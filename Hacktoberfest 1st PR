@@ -1,0 +1,17 @@
+sum=count=0
+for i in range(5):
+    print("Enter",i+1,"of 5 numbers:")
+    number=int(input())
+    lowestdigit=number%10
+    t=number
+    while t!=0:
+        d=t%10
+        t=t//10
+        if d==lowestdigit:
+            flag=1
+            print('sorry')
+            break
+if sum==0:
+    print('No Such Entry')
+else:
+    print('Sum:',sum,'Average:',sum/count)
