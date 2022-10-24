@@ -1,0 +1,19 @@
+def prime(num):
+    for d in range(2,num):
+        if num%d==0:
+            return False
+    return True
+def reverse(num):
+    r=0
+    while num!=0:
+        d=num%10
+        r=r*10+d
+        num=num//10
+        return r
+def palprime():
+    x=int(input('Enter No:'))
+    if prime(x)==True and x==reverse(x):
+        print('The number is a Palindrome Prime')
+    else:
+        print('Not a Palindrome Prime')
+palprime()
