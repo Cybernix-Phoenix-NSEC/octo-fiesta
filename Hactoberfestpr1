@@ -1,0 +1,5 @@
+class Fest{
+public static void main(String args[]){
+System.out.println("I am really happy to participate in Hactoberfest2022");
+}
+}
