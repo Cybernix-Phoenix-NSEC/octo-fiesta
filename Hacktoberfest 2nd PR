@@ -1,0 +1,19 @@
+list=[]
+range=int(input('Enter Range:'))
+for i in range:
+    num=int(input('Enter Number:'))
+    list.append(num)
+print(list)
+list2=[]
+for i in list:
+    bk=i
+    digitcount=0
+    while bk!=0:
+        bk//=10
+        digitcount+=1
+    square=i*i
+    lp=sq%(10**digitcount)
+    if lp==i:
+        list2.append(i)
+    max=max(list2)
+    print('Maximum Automorphic Number:',max)
