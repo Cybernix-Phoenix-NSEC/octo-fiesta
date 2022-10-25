@@ -1,0 +1,10 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+int sum=0;
+for(int current=1;current<=7;current=current+1){
+sum=sum+current;
+}
+return0;
+}
