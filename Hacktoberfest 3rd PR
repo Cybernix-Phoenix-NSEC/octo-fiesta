@@ -1,25 +1,19 @@
-n=input('Enter a String:')
-lettercount=0
-digitcount=0
-spacecount=0
-specialcharcount=0
-for i in n:
-    print(i,end='')
-    if n.isalpha()==True:
-        lettercount+=1
-    elif n.isdigit()==True:
-        digitcount()+=1
-    elif n.isspace()==True:
-        spacecount+=1
+def prime(num):
+    for d in range(2,num):
+        if num%d==0:
+            return False
+    return True
+def reverse(num):
+    r=0
+    while num!=0:
+        d=num%10
+        r=r*10+d
+        num=num//10
+        return r
+def palprime():
+    x=int(input('Enter No:'))
+    if prime(x)==True and x==reverse(x):
+        print('The number is a Palindrome Prime')
     else:
-        specialcharcount+=1
-if lettercount!=0:
-    print('Letter Count:', lettercount)
-elif digitcount!=0:
-    print('Digit Count:', digitcount)
-elif spacecount!=0:
-    print('Space Count:', spacecount)
-elif specialcharcount!=0:
-    print('Special Character Count:', specialcharcount)
-else:
-    print('ERROR!')
+        print('Not a Palindrome Prime')
+palprime()
