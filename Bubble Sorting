@@ -1,0 +1,10 @@
+L=[]
+n=int(input("How many numbers you want to input in the array"))
+for i in range(0,n):
+	x=int(input("Enter the numbers"))
+	L.append(x)
+for i in range(0,n):
+	for j in range(0,n-1):
+		if L[j]>L[j+1]:
+			L[j],L[j+1]=L[j+1],L[j]
+print("The array after sorting in ascending order is:",L)

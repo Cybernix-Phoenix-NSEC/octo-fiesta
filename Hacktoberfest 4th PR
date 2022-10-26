@@ -1,0 +1,62 @@
+#Queues
+#Functions
+
+front=rear=0
+def empty(q):
+    if q==[]:
+        return True
+    else:
+        return False
+def push(q,value):
+    global front,rear
+    print('Add:')
+    q.append(value)
+    if len(q)==1:
+        front=rear=0
+    else:
+        rear+=1
+def pop(q):
+    global front,rear
+    print('Delete:')
+    if empty(q)==True:
+        print('Underflow!')
+    elif front==rear:
+        returnvalue=q[front]
+        front=rear=0
+        q.clear()
+    else:
+        returnvalue=q[front]
+        front+=1
+    return returnvalue
+def show(q):
+    global front,rear
+    for i in range(front,rear+1):
+        print(q[i],end=' ')
+        
+#main
+
+ch=0
+q=[]
+while True:
+    print('\n \t \t QUEUE MENU\n Press 0 to Exit\n Press 1 to Add\n Press 2 to Delete\n Press 3 to Show\n Enter Your Choice:')
+    ch=int(input())
+    if ch==0:
+        break
+    elif ch==1:
+        if len(q)==0:
+            n=int(input('Enter First Value:'))
+        else:
+            n=int(input('Enter Next Value:'))
+        push(q,n)
+    elif ch==2:
+        if len(q)==0:
+            print('No Value-Underflow!')
+        else:
+            delvalue=pop(q)
+            print('Deleted value:',delvalue)
+    elif ch==3:
+       show(q)
+    else:
+        print('Wrong Choice!')
+   
+        
