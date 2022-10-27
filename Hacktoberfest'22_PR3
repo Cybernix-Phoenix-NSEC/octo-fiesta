@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int num;
+    struct node* nextptr;
+}*stnode;
+
+void createnode(int );
+void display();
+
+
+int main()
+{
+    int n;
+    printf("enter no of nodes\n");
+    scanf("%d",&n);
+    
+    createnode(n);    
+	display();
+
+    return 0;
+}
+
+void createnode(int x)
+{
+if(x==0)
+return;
+
+    struct node*fn,*temp;
+    
+    int num,i;
+    
+    stnode=(struct node*)malloc(sizeof(struct node));
+    
+    if(stnode==NULL)
+{
+        printf("memory cannot be allocated\n");
+    }
+    else
+{
+        printf("enter data for node\n");
+        scanf("%d",&num);
+        
+        stnode->num=num;
+        stnode->nextptr=NULL;
+        
+        temp=stnode;
+        for(int i=2;i<=x;i++)
+{
+            fn=(struct node*)malloc(sizeof(struct node));
+            
+            if(fn==NULL)
+{
+                printf("memory cannot be allocated\n");
+                break;
+}
+            else
+{
+                printf("enter data for node\n");
+                 scanf("%d",&num);
+        
+                 fn->num=num;
+                 fn->nextptr=NULL;
+        
+                 temp->nextptr=fn;
+                 temp=temp->nextptr;
+            }
+        }
+    }
+    
+    
+}
+
+void display()
+{
+        struct node *tmp;
+        if(stnode==NULL)
+{
+            printf("list is empty");
+        }
+        else
+{
+ printf("Data entered in the list\n");
+           
+            tmp=stnode;
+            
+            while(tmp!=NULL){
+                printf("Data -> %d\n",tmp->num);
+                tmp=tmp->nextptr;
+            }
+        }
+    }
